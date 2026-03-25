@@ -1,0 +1,33 @@
+{
+  "name": "veldco-dynamic",
+  "version": "1.0.0",
+  "description": "Dynamic Node.js + PostgreSQL version of Veld Co site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "migrate": "psql $DB_URL -f migrations/schema.sql && node utils/seed.js",
+    "build": "echo 'No build step needed'"
+  },
+  "keywords": ["express", "ejs", "postgresql", "ecommerce"],
+  "author": "BLACKBOXAI",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "ejs": "^3.1.10",
+    "pg": "^8.12.0",
+    "dotenv": "^16.4.5",
+    "helmet": "^7.1.0",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^7.4.0",
+    "joi": "^17.13.3",
+    "express-validator": "^7.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+

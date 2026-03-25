@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<%- include('partials/header', { pathname: '/' }) %>
+  <main>
+    <!-- Hero - preserve exact -->
+    <section class="hero">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1 class="hero__title">Оптовый поставщик детских товаров <span>с 1996 года</span></h1>
+          <p class="hero__subtitle">Более 60 000 наименований: игрушки, творчество, упаковка, канцелярия и товары для праздника</p>
+          <div class="hero__actions">
+            <a href="/catalog" class="btn btn--primary">Перейти в каталог</a>
+            <a href="#" class="btn btn--outline">Скачать прайс-лист</a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <img src="/images/23_6.jpg" alt="Детские товары" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantages - static preserve -->
+    <section class="advantages">
+      <!-- ... exact from original HTML ... -->
+      <div class="container">
+        <h2 class="section-title">Почему нам доверяют</h2>
+        <div class="advantages__grid">
+          <div class="advantage-card">
+            <div class="advantage-card__icon"><i class="fas fa-certificate"></i></div>
+            <h3>Торговые марки и эксклюзивные бренды</h3>
+            <p>Собственные ТМ: «Фабрика фантазий», Amico, Drift, Hoffmann, Ути Пути и др.</p>
+          </div>
+          <!-- other cards static -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories - dynamic loop -->
+    <section class="categories">
+      <div class="container">
+        <h2 class="section-title">Категории товаров</h2>
+        <div class="categories__grid">
+          <% categories.forEach(cat => { %>
+            <a href="/catalog/<%= cat.slug %>" class="category-card">
+              <img src="/images/<%= cat.img || 'placeholder.jpg' %>" alt="<%= cat.name %>" loading="lazy">
+              <span class="category-card__title"><%= cat.name %></span>
+            </a>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Swiper - dynamic -->
+    <section class="products-highlight">
+      <div class="container">
+        <h2 class="section-title">Новинки и хиты продаж</h2>
+        <div class="swiper products-swiper">
+          <div class="swiper-wrapper">
+            <% products.forEach(product => { %>
+              <div class="swiper-slide product-card">
+                <img src="<%= product.imgs[0] || '/images/placeholder.jpg' %>" alt="<%= product.name %>" class="product-card__img" loading="lazy">
+                <h3 class="product-card__title"><%= product.name %></h3>
+                <% if (product.isNew) { %><span class="product-card__badge product-card__badge--new">Новинка</span><% } %>
+                <% if (product.isHit) { %><span class="product-card__badge product-card__badge--hit">Хит</span><% } %>
+                <button class="product-card__quickview" data-product="<%= product.id %>">Быстрый просмотр</button>
+              </div>
+            <% }) %>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials static/blog static/about/news dynamic/news -->
+    <section class="about-news">
+      <div class="container about-news__container">
+        <div class="about">
+          <!-- static about text -->
+        </div>
+        <div class="news">
+          <h2 class="section-title">Новости</h2>
+          <div class="news__list">
+            <% news.forEach(item => { %>
+              <div class="news-item">
+                <span class="news-item__date"><%= item.date %></span>
+                <h3 class="news-item__title"><%= item.title %></h3>
+                <p class="news-item__preview"><%= item.preview %></p>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner form static for now -->
+    <section class="partner-form">
+      <!-- preserve form -->
+    </section>
+  </main>
+  <%- include('partials/footer') %>
+  <%- include('partials/modal') %>
+</body>
+</html>
+

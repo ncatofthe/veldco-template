@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veld Co - Главная</title>
+    <!-- Шрифты и иконки -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Наш CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <img src="images/Снимок экрана (1).png" alt="Veld Co" class="logo__img">
+            </a>
+            <div class="header__search">
+                <input type="text" placeholder="Поиск среди 60 000 товаров..." class="header__search-input">
+                <button class="header__search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header__contacts">
+                <a href="tel:88005551060" class="header__phone">8-800-555-10-60</a>
+                <span class="header__worktime">Ежедневно 9:00–18:00</span>
+            </div>
+            <button class="header__btn btn">Стать клиентом</button>
+            <button class="header__burger" aria-label="Меню"><i class="fas fa-bars"></i></button>
+        </div>
+        <nav class="nav">
+            <div class="container nav__container">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link active">Главная</a></li>
+                    <li class="nav__item"><a href="catalog.html" class="nav__link">Каталог</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Наши бренды</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Оптовым покупателям</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">О компании</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Герой -->
+        <section class="hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Оптовый поставщик детских товаров <span>с 1996 года</span></h1>
+                    <p class="hero__subtitle">Более 60 000 наименований: игрушки, творчество, упаковка, канцелярия и товары для праздника</p>
+                    <div class="hero__actions">
+                        <a href="catalog.html" class="btn btn--primary">Перейти в каталог</a>
+                        <a href="#" class="btn btn--outline">Скачать прайс-лист</a>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <img src="images/23_6.jpg" alt="Детские товары" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="advantages">
+            <div class="container">
+                <h2 class="section-title">Почему нам доверяют</h2>
+                <div class="advantages__grid">
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon"><i class="fas fa-certificate"></i></div>
+                        <h3>Торговые марки и эксклюзивные бренды</h3>
+                        <p>Собственные ТМ: «Фабрика фантазий», Amico, Drift, Hoffmann, Ути Пути и др.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Безопасные материалы</h3>
+                        <p>Вся продукция сертифицирована, контроль качества на производстве</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon"><i class="fas fa-paint-brush"></i></div>
+                        <h3>Современный дизайн упаковки</h3>
+                        <p>Оригинальная упаковка, которая привлекает покупателей</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon"><i class="fas fa-truck"></i></div>
+                        <h3>Гарантия качества и контроль</h3>
+                        <p>Поставки по всей России и в страны СНГ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Категории товаров -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Категории товаров</h2>
+                <div class="categories__grid">
+                    <a href="#" class="category-card">
+                        <img src="images/игрушки.jpg" alt="Игрушки" loading="lazy">
+                        <span class="category-card__title">Игрушки</span>
+                    </a>
+                    <a href="#" class="category-card">
+                        <img src="images/творчество.jpg" alt="Творчество" loading="lazy">
+                        <span class="category-card__title">Творчество</span>
+                    </a>
+                    <a href="#" class="category-card">
+                        <img src="images/упаковкка.jpg" alt="Упаковка" loading="lazy">
+                        <span class="category-card__title">Подарочная упаковка</span>
+                    </a>
+                    <a href="#" class="category-card">
+                        <img src="images/праздник.jpg" alt="Праздник" loading="lazy">
+                        <span class="category-card__title">Товары для праздника</span>
+                    </a>
+                    <a href="#" class="category-card">
+                        <img src="images/фототовары.jpg" alt="Канцелярия" loading="lazy">
+                        <span class="category-card__title">Фото товары</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Карусель новинок и хитов (Swiper) -->
+        <section class="products-highlight">
+            <div class="container">
+                <h2 class="section-title">Новинки и хиты продаж</h2>
+                <div class="swiper products-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Слайд 1 -->
+                        <div class="swiper-slide product-card">
+                            <img src="https://via.placeholder.com/250x200/ff9999/ffffff?text=Игрушка+1" alt="Товар" class="product-card__img" loading="lazy">
+                            <h3 class="product-card__title">Развивающая игрушка "Логик"</h3>
+                            <span class="product-card__badge product-card__badge--new">Новинка</span>
+                            <button class="product-card__quickview" data-product="1">Быстрый просмотр</button>
+                        </div>
+                        <!-- Слайд 2 -->
+                        <div class="swiper-slide product-card">
+                            <img src="https://via.placeholder.com/250x200/99ccff/ffffff?text=Творчество" alt="Товар" class="product-card__img" loading="lazy">
+                            <h3 class="product-card__title">Набор для творчества "Рисуй светом"</h3>
+                            <span class="product-card__badge product-card__badge--hit">Хит</span>
+                            <button class="product-card__quickview" data-product="2">Быстрый просмотр</button>
+                        </div>
+                        <!-- Слайд 3 -->
+                        <div class="swiper-slide product-card">
+                            <img src="https://via.placeholder.com/250x200/99ff99/ffffff?text=Упаковка" alt="Товар" class="product-card__img" loading="lazy">
+                            <h3 class="product-card__title">Подарочные коробки с крышкой</h3>
+                            <button class="product-card__quickview" data-product="3">Быстрый просмотр</button>
+                        </div>
+                        <!-- Слайд 4 -->
+                        <div class="swiper-slide product-card">
+                            <img src="https://via.placeholder.com/250x200/ffcc66/ffffff?text=Гирлянда" alt="Товар" class="product-card__img" loading="lazy">
+                            <h3 class="product-card__title">Гирлянда "Звездная ночь"</h3>
+                            <span class="product-card__badge product-card__badge--hit">Хит</span>
+                            <button class="product-card__quickview" data-product="4">Быстрый просмотр</button>
+                        </div>
+                        <!-- Слайд 5 -->
+                        <div class="swiper-slide product-card">
+                            <img src="https://via.placeholder.com/250x200/cc99ff/ffffff?text=Пазл" alt="Товар" class="product-card__img" loading="lazy">
+                            <h3 class="product-card__title">Пазл "Динозавры"</h3>
+                            <button class="product-card__quickview" data-product="5">Быстрый просмотр</button>
+                        </div>
+                        <!-- Слайд 6 -->
+                        <div class="swiper-slide product-card">
+                            <img src="https://via.placeholder.com/250x200/ffaa88/ffffff?text=Набор" alt="Товар" class="product-card__img" loading="lazy">
+                            <h3 class="product-card__title">Набор для опытов</h3>
+                            <span class="product-card__badge product-card__badge--new">Новинка</span>
+                            <button class="product-card__quickview" data-product="6">Быстрый просмотр</button>
+                        </div>
+                    </div>
+                    <!-- Навигация для карусели -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Отзывы клиентов -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Отзывы наших клиентов</h2>
+                <div class="testimonials__grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-card__text">«Работаем с Veld Co уже 5 лет. Всегда свежий ассортимент, быстрая доставка, отличные цены. Рекомендуем как надёжного партнёра.»</p>
+                        <p class="testimonial-card__author">ИП Петрова, г. Москва</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-card__text">«Благодаря собственным брендам можем предложить покупателям уникальные товары. Отдельное спасибо за сервис и консультации.»</p>
+                        <p class="testimonial-card__author">ООО «Детский мир», г. Казань</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-card__text">«Огромный выбор подарочной упаковки и товаров для праздника. Удобно, что можно заказать оптом всё в одном месте.»</p>
+                        <p class="testimonial-card__author">ИП Сидоров, г. Новосибирск</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блог / Статьи -->
+        <section class="blog">
+            <div class="container">
+                <h2 class="section-title">Полезные статьи</h2>
+                <div class="blog__grid">
+                    <div class="blog-card">
+                        <img src="https://via.placeholder.com/400x250/cccccc/ffffff?text=Тренды+сезона" alt="Статья" loading="lazy">
+                        <div class="blog-card__content">
+                            <h3>Тренды детских игрушек 2026</h3>
+                            <p>Что будет популярно в новом сезоне: экологичные материалы, развивающие наборы...</p>
+                            <a href="#" class="btn btn--small">Читать далее</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="https://via.placeholder.com/400x250/cccccc/ffffff?text=Как+выбрать+поставщика" alt="Статья" loading="lazy">
+                        <div class="blog-card__content">
+                            <h3>Как выбрать надёжного поставщика</h3>
+                            <p>Пять критериев, на которые стоит обратить внимание при оптовых закупках...</p>
+                            <a href="#" class="btn btn--small">Читать далее</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <img src="https://via.placeholder.com/400x250/cccccc/ffffff?text=Упаковка+товара" alt="Статья" loading="lazy">
+                        <div class="blog-card__content">
+                            <h3>Важность подарочной упаковки</h3>
+                            <p>Как качественная упаковка увеличивает продажи в рознице.</p>
+                            <a href="#" class="btn btn--small">Читать далее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- О компании и новости -->
+        <section class="about-news">
+            <div class="container about-news__container">
+                <div class="about">
+                    <h2 class="section-title">О компании</h2>
+                    <p class="about__text">Компания Veld Co. с 1996 года занимает прочную позицию на рынке детских игрушек, товаров для творчества, подарочной упаковки и канцелярии. Мы оптом поставляем продукцию на территорию России и в страны СНГ. Ассортимент насчитывает более 60 000 наименований, включая лицензионные и собственные торговые марки.</p>
+                    <p class="about__text">Ежегодно участвуем в крупнейших международных выставках. Работаем только с ИП и юридическими лицами.</p>
+                    <a href="#" class="btn btn--primary">Подробнее</a>
+                </div>
+                <div class="news">
+                    <h2 class="section-title">Новости</h2>
+                    <div class="news__list">
+                        <div class="news-item">
+                            <span class="news-item__date">02.10.2025</span>
+                            <h3 class="news-item__title">Итоги выставки Мир детства 2025</h3>
+                            <p class="news-item__preview">Выставка прошла с большим успехом, спасибо всем, кто проявил интерес к нашему стенду...</p>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-item__date">28.08.2025</span>
+                            <h3 class="news-item__title">День рождения Veld Co 2025</h3>
+                            <p class="news-item__preview">Нашей компании Veld Co 29 лет! С Днем рождения! >></p>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-item__date">21.08.2025</span>
+                            <h3 class="news-item__title">Veld Co - участник осенней выставки "МИР ДЕТСТВА" 2025</h3>
+                            <p class="news-item__preview">Выставка пройдет на новом месте: в МВЦ Крокус Экспо, 2й павильон! Метро Мякинино...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма для партнёров -->
+        <section class="partner-form">
+            <div class="container">
+                <h2 class="section-title">Стать партнёром</h2>
+                <p class="partner-form__desc">Заполните форму, и мы свяжемся с вами для обсуждения условий сотрудничества</p>
+                <form class="form">
+                    <div class="form__row">
+                        <input type="text" placeholder="Ваше имя" class="form__input" required>
+                        <input type="email" placeholder="E-mail" class="form__input" required>
+                    </div>
+                    <div class="form__row">
+                        <input type="tel" placeholder="Телефон" class="form__input" required>
+                        <input type="text" placeholder="Название компании" class="form__input">
+                    </div>
+                    <div class="form__row">
+                        <textarea placeholder="Комментарий" class="form__textarea"></textarea>
+                    </div>
+                    <div class="form__row">
+                        <button type="submit" class="btn btn--primary">Отправить заявку</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__col">
+                <img src="https://via.placeholder.com/150x50/ffaa00/000000?text=Veld+Co" alt="Veld Co" class="footer__logo">
+                <p class="footer__copy">© 2026 Veld Co. Все права защищены.</p>
+            </div>
+            <div class="footer__col">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="#">Наши бренды</a></li>
+                    <li><a href="#">Оптовым покупателям</a></li>
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Контакты</h4>
+                <p><i class="fas fa-phone"></i> <a href="tel:88005551060">8-800-555-10-60</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@veld-co.com">info@veld-co.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Примерная, д. 1</p>
+            </div>
+            <div class="footer__col">
+                <h4>Мы в соцсетях</h4>
+                <p><i class="fab fa-vk"></i> <i class="fab fa-telegram"></i> <i class="fab fa-whatsapp"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно быстрого просмотра товара -->
+    <div id="quickview-modal" class="modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <div class="modal__body">
+                <!-- Сюда будет подгружаться информация о товаре через JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="scrollToTop" class="scroll-top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Подключение скриптов -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

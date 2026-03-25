@@ -1,0 +1,25 @@
+<%- include('layouts/main', { title: 'Бренды', pathname: '/brands' }) %>
+<main class="reveal">
+  <section class="page-header">
+    <div class="container">
+      <h1>Наши бренды</h1>
+      <ul class="breadcrumbs">
+        <li><a href="/">Главная</a></li>
+        <li>Бренды</li>
+      </ul>
+    </div>
+  </section>
+  <section class="brands">
+    <div class="container">
+      <div class="brands__grid">
+        <% brands.forEach(brand => { %>
+          <div class="brand-card">
+            <img src="<%= brand.logo ? '/images/' + brand.logo : '/images/placeholder.jpg' %>" alt="<%= brand.name %>">
+            <h3><%= brand.name %></h3>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+</main>
+
