@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="container header__container">
+    <a href="/" class="logo">
+      <img src="/images/Снимок экрана (1).png" alt="Veld Co" class="logo__img">
+    </a>
+    <div class="header__search">
+      <input type="text" placeholder="Поиск среди 60 000 товаров..." class="header__search-input">
+      <button class="header__search-btn"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="header__contacts">
+      <a href="tel:88005551060" class="header__phone">8-800-555-10-60</a>
+      <span class="header__worktime">Ежедневно 9:00–18:00</span>
+    </div>
+    <button class="header__btn btn">Стать клиентом</button>
+    <button class="header__burger" aria-label="Меню"><i class="fas fa-bars"></i></button>
+  </div>
+  <nav class="nav">
+    <div class="container nav__container">
+<ul class="nav__list">
+        <li class="nav__item"><a href="/" class="nav__link <%= pathname === '/' ? 'active' : '' %>">Главная</a></li>
+        <li class="nav__item"><a href="/catalog" class="nav__link <%= pathname === '/catalog' ? 'active' : '' %>">Каталог</a></li>
+        <li class="nav__item"><a href="/brands" class="nav__link <%= pathname === '/brands' ? 'active' : '' %>">Наши бренды</a></li>
+        <li class="nav__item"><a href="/wholesale" class="nav__link <%= pathname === '/wholesale' ? 'active' : '' %>">Оптовым покупателям</a></li>
+        <li class="nav__item"><a href="/about" class="nav__link <%= pathname === '/about' ? 'active' : '' %>">О компании</a></li>
+        <li class="nav__item"><a href="/contacts" class="nav__link <%= pathname === '/contacts' ? 'active' : '' %>">Контакты</a></li>
+  </ul>
+    </div>
+  </nav>
+</header>
+

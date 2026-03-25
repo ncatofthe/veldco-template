@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/header', { pathname: '/catalog' }) %>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Каталог товаров</h1>
+        <ul class="breadcrumbs">
+          <li><a href="/">Главная</a></li>
+          <li><a href="/catalog">Каталог</a></li>
+          <% if (typeof category !== 'undefined') { %><li><%= category %></li><% } %>
+        </ul>
+      </div>
+    </section>
+
+    <section class="catalog">
+      <div class="container catalog__container">
+        <!-- Sidebar filters - GET params -->
+        <aside class="catalog__sidebar">
+          <h3>Категории</h3>
+          <ul class="catalog__categories">
+            <li><a href="/catalog" data-category="all" class="<%= !category ? 'active' : '' %>">Все товары</a></li>
+            <% categories.forEach(cat => { %>
+              <li><a href="/catalog/<%= cat.slug %>" data-category="<%= cat.slug %>" class="<%= category === cat.slug ? 'active' : '' %>"><%= cat.name %></a></li>
+            <% }) %>
+          </ul>
+
+          <h3>Бренды</h3>
+          <ul class="catalog__filter">
+            <% brands.forEach(brand => { %>
+              <li><label><input type="checkbox" data-brand="<%= brand.slug %>"> <%= brand.name %></label></li>
+            <% }) %>
+          </ul>
+
+          <h3>Цена (от)</h3>
+          <div class="price-filter">
+            <form action="/catalog" method="get">
+              <input type="number" name="priceMin" value="<%= priceMin || '' %>" placeholder="от" class="price-input">
+              <input type="number" name="priceMax" value="<%= priceMax || '' %>" placeholder="до" class="price-input">
+              <button type="submit" class="btn btn--small">Применить</button>
+            </form>
+          </div>
+
+          <h3>Наличие</h3>
+          <ul class="catalog__filter">
+            <li><label><input type="checkbox" data-stock="in"> В наличии</label></li>
+          </ul>
+        </aside>
+
+        <div class="catalog__main">
+          <div class="catalog__toolbar">
+            <div class="catalog__sort">
+              <label for="sort">Сортировка:</label>
+              <select id="sort" name="sort" form="catalog-form">
+                <option value="popular" <%= sort === 'popular' ? 'selected' : '' %>>по популярности</option>
+                <option value="price-asc" <%= sort === 'price-asc' ? 'selected' : '' %>>по цене ↑</option>
+                <option value="price-desc" <%= sort === 'price-desc' ? 'selected' : '' %>>по цене ↓</option>
+              </select>
+            </div>
+            <div class="catalog__view">
+              <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+              <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+            </div>
+          </div>
+
+          <div class="catalog__grid products-grid">
+            <% products.forEach(product => { %>
+              <div class="product-card" data-category="<%= product.category_slug %>" data-brand="<%= product.brand_slug %>" data-price="<%= product.price %>" data-stock="<%= product.stock ? 'in' : 'out' %>">
+                <img src="<%= product.imgs[0] || 'placeholder.jpg' %>" alt="<%= product.name %>" class="product-card__img" loading="lazy">
+                <h3 class="product-card__title"><%= product.name %></h3>
+                <p class="product-card__sku">Арт: <%= product.art %></p>
+                <button class="product-card__add-cart" data-product="<%= product.id %>">В заявку</button>
+                <button class="product-card__quickview" data-product="<%= product.id %>">Просмотр</button>
+              </div>
+            <% }) %>
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <% for(let i=1; i<=pages; i++) { %>
+              <a href="/catalog?page=<%= i %><%= queryStr ? '&' + queryStr : '' %>" class="pagination__item <%= currentPage == i ? 'active' : '' %>"><%= i %></a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <%- include('partials/footer') %>
+  <%- include('partials/modal') %>
+</body>
+</html>
+
